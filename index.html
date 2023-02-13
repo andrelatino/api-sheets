@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="google" content="notranslate">
+        <link rel="manifest" href="./workbox-sw.js">
+        <!-- <link rel="manifest" href="./manifest.json"> -->
+    </head>
+<body>
+    <div id="grid" class="hello">
+      <!-- products will be added here -->
+    </div>
+
+    <script>
+      // Fetch the JSON data
+      fetch('https://script.googleusercontent.com/macros/echo?user_content_key=qAw6yTviMez4y68L1-2dlXWvC4jsErHzlgSm9QEesuBxiBm09l9v2OoKkeEOTKURTJb_IbxqeCRYnPTJYmohhqeeceR-O-_Vm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnJIjbeK96xcji4d3TYA3lKFKqfPHWxIVB97IRUL3JhNV15NEGwALggiF0T9T6OxJoNqmhRuFts9lbACbNJ2Bi9YVGr6oW4HMQ9z9Jw9Md8uu&lib=MgNh44k62U2IB0EWccPzPoBJc0HELsjSn')
+        .then(response => response.json())
+        .then(data => {
+          // Get the product list element
+          const productList = document.getElementById('grid');
+
+          // Loop through the products in the data
+          for (const user of data.user) {
+            // Create a new div element for the product
+            const productDiv = document.createElement('div');
+            productDiv.className = 'items';
+
+            // Set the innerHTML of the div to the product's title and price
+             
+            productDiv.innerHTML = `
+            
+            <h3>Name : ${user.id}
+            </h3><p> Age : ${user.name}</p>
+            
+            `;
+
+            // Append the product div to the product list
+            productList.appendChild(productDiv);
+          }
+        });
+    </script>
+  </body>
+</html>
