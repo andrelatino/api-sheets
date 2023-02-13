@@ -1,0 +1,21 @@
+
+
+{
+    "background_color": "#046afb",
+    "description": "Neo Sheets",
+    "display": "standalone",
+    "icons": [
+      
+      {
+        "src": "./pwa.png",
+        "type": "image/png",
+        "sizes": "512x512",
+        "purpose": "maskable"
+      }
+    ],
+    "name": "Neo Sheets",
+    "orientation": "natural",
+    "short_name": "Neo Sheets",
+    "start_url": "./",
+    "theme_color": "#046afb"
+  }
